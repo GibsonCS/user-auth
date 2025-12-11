@@ -1,7 +1,7 @@
 package br.com.userauth.infrastructure.persistence;
 
+import br.com.userauth.application.ports.UserRepository;
 import br.com.userauth.domain.model.user.User;
-import br.com.userauth.domain.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 

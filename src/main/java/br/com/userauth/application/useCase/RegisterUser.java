@@ -1,10 +1,11 @@
 package br.com.userauth.application.useCase;
 
+import br.com.userauth.application.ports.PasswordEncoder;
+import br.com.userauth.application.ports.RoleRepository;
+import br.com.userauth.application.ports.UserRepository;
 import br.com.userauth.domain.exception.UserAlreadyExistException;
 import br.com.userauth.domain.model.role.Role;
 import br.com.userauth.domain.model.user.User;
-import br.com.userauth.domain.repository.RoleRepository;
-import br.com.userauth.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class RegisterUser {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public User execute(String login, String email, String password) {
 
@@ -39,7 +41,7 @@ public class RegisterUser {
                 UUID.randomUUID().toString(),
                 login,
                 email,
-                password,
+                passwordEncoder.encode(password),
                 roles
         );
 

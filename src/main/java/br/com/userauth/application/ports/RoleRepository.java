@@ -1,4 +1,4 @@
-package br.com.userauth.domain.repository;
+package br.com.userauth.application.ports;
 
 
 import br.com.userauth.domain.model.role.Role;

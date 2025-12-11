@@ -1,4 +1,4 @@
-package br.com.userauth.domain.repository;
+package br.com.userauth.application.ports;
 
 import br.com.userauth.domain.model.user.User;
 import org.springframework.security.core.userdetails.UserDetails;
