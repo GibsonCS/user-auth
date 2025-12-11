@@ -1,6 +1,6 @@
 package br.com.userauth.domain.repository;
 
-import br.com.userauth.domain.model.User;
+import br.com.userauth.domain.model.user.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public interface UserRepository {

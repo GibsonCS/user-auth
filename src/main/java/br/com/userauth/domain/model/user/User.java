@@ -1,9 +1,9 @@
-package br.com.userauth.domain.model;
+package br.com.userauth.domain.model.user;
 
 import br.com.userauth.domain.exception.InvalidEmailException;
 import br.com.userauth.domain.exception.InvalidLoginException;
 import br.com.userauth.domain.exception.InvalidPasswordException;
-import br.com.userauth.infrastructure.persistence.Role;
+import br.com.userauth.domain.model.role.Role;
 import lombok.Getter;
 
 import java.util.Set;
