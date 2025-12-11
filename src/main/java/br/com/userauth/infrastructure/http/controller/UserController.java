@@ -1,7 +1,7 @@
 package br.com.userauth.infrastructure.http.controller;
 
 import br.com.userauth.application.useCase.RegisterUser;
-import br.com.userauth.domain.model.User;
+import br.com.userauth.domain.model.user.User;
 import br.com.userauth.infrastructure.http.dto.RegisterUserRequest;
 import br.com.userauth.infrastructure.http.dto.RegisterUserResponse;
 import lombok.RequiredArgsConstructor;

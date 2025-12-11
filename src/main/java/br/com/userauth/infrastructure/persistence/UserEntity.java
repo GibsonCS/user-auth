@@ -1,9 +1,9 @@
 package br.com.userauth.infrastructure.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -16,4 +16,8 @@ public class UserEntity {
     private String login;
     private String email;
     private String password;
+
+    @ManyToMany
+    @JoinTable(joinColumns = @JoinColumn(name = "users_id"))
+    private Set<RoleEntity> roles;
 }
