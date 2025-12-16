@@ -1,9 +1,11 @@
 package br.com.userauth.infrastructure.persistence;
 
 import br.com.userauth.application.ports.UserRepository;
-import br.com.userauth.domain.model.user.User;
+import br.com.userauth.domain.entities.user.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
@@ -22,6 +24,15 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public void softDelete(User user) {
+        Optional<UserEntity> entity = userJpaRepository.findById(UserMapper.toEntity(user).getId());
+
+        entity.ifPresent(userEntity -> userEntity.setActive(false));
+
+        entity.ifPresent(userJpaRepository::save);
+    }
+
+    @Override
     public UserDetails findByLogin(String login) {
         return userJpaRepository.findByLogin(login);
     }
@@ -32,8 +43,15 @@ public class UserRepositoryImpl implements UserRepository {
 
         if (userEntity != null) {
             return UserMapper.toDomain(userEntity);
-        } else {
-            return null;
         }
+
+        return null;
+    }
+
+    @Override
+    public User findById(String id) {
+        Optional<UserEntity> entity = userJpaRepository.findById(id);
+
+        return entity.map(UserMapper::toDomain).orElse(null);
     }
 }

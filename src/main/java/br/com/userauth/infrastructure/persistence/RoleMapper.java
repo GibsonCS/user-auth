@@ -1,6 +1,6 @@
 package br.com.userauth.infrastructure.persistence;
 
-import br.com.userauth.domain.model.role.Role;
+import br.com.userauth.domain.entities.role.Role;
 
 public class RoleMapper {
 

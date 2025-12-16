@@ -1,4 +1,4 @@
-package br.com.userauth.domain.model.role;
+package br.com.userauth.domain.entities.role;
 
 import lombok.Getter;
 

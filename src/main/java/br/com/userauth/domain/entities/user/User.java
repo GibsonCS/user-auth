@@ -1,9 +1,9 @@
-package br.com.userauth.domain.model.user;
+package br.com.userauth.domain.entities.user;
 
+import br.com.userauth.domain.entities.role.Role;
 import br.com.userauth.domain.exception.InvalidEmailException;
 import br.com.userauth.domain.exception.InvalidLoginException;
 import br.com.userauth.domain.exception.InvalidPasswordException;
-import br.com.userauth.domain.model.role.Role;
 import lombok.Getter;
 
 import java.util.Set;
@@ -16,8 +16,9 @@ public class User {
     private final String email;
     private final String password;
     private final Set<Role> roles;
+    private final Boolean active;
 
-    public User(String id, String login, String email, String password, Set<Role> roles) {
+    public User(String id, String login, String email, String password, Boolean active, Set<Role> roles) {
         if (login == null || login.length() <= 3) {
             throw new InvalidLoginException("insert a valid login");
         }
@@ -33,7 +34,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.roles = Set.copyOf(roles);
+        this.active = active;
     }
-
-
 }

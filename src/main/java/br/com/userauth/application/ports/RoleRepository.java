@@ -1,7 +1,7 @@
 package br.com.userauth.application.ports;
 
 
-import br.com.userauth.domain.model.role.Role;
+import br.com.userauth.domain.entities.role.Role;
 
 public interface RoleRepository {
 

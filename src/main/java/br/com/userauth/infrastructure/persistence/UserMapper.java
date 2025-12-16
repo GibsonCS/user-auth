@@ -1,7 +1,7 @@
 package br.com.userauth.infrastructure.persistence;
 
-import br.com.userauth.domain.model.role.Role;
-import br.com.userauth.domain.model.user.User;
+import br.com.userauth.domain.entities.role.Role;
+import br.com.userauth.domain.entities.user.User;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,6 +19,7 @@ public class UserMapper {
         userEntity.setLogin(user.getLogin());
         userEntity.setEmail(user.getEmail());
         userEntity.setPassword(user.getPassword());
+        userEntity.setActive(user.getActive());
         userEntity.setRoles(roles);
 
         return userEntity;
@@ -36,6 +37,7 @@ public class UserMapper {
                 userEntity.getLogin(),
                 userEntity.getEmail(),
                 userEntity.getPassword(),
+                userEntity.getActive(),
                 roles
         );
     }

@@ -16,6 +16,7 @@ public class UserEntity {
     private String login;
     private String email;
     private String password;
+    private Boolean active;
 
     @ManyToMany
     @JoinTable(joinColumns = @JoinColumn(name = "users_id"))

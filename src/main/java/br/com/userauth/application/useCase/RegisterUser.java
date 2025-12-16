@@ -3,9 +3,9 @@ package br.com.userauth.application.useCase;
 import br.com.userauth.application.ports.PasswordEncoder;
 import br.com.userauth.application.ports.RoleRepository;
 import br.com.userauth.application.ports.UserRepository;
+import br.com.userauth.domain.entities.role.Role;
+import br.com.userauth.domain.entities.user.User;
 import br.com.userauth.domain.exception.UserAlreadyExistException;
-import br.com.userauth.domain.model.role.Role;
-import br.com.userauth.domain.model.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +42,7 @@ public class RegisterUser {
                 login,
                 email,
                 passwordEncoder.encode(password),
+                true,
                 roles
         );
 
