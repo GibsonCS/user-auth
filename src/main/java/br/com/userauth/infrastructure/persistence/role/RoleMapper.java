@@ -1,4 +1,4 @@
-package br.com.userauth.infrastructure.persistence;
+package br.com.userauth.infrastructure.persistence.role;
 
 import br.com.userauth.domain.entities.role.Role;
 

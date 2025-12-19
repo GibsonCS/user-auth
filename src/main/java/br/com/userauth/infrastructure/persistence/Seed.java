@@ -1,6 +1,6 @@
 package br.com.userauth.infrastructure.persistence;
 
-import br.com.userauth.application.ports.RoleRepository;
+import br.com.userauth.application.ports.out.RoleRepository;
 import br.com.userauth.domain.entities.role.Role;
 import br.com.userauth.domain.entities.role.RoleEnum;
 import org.springframework.boot.CommandLineRunner;

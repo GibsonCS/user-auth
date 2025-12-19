@@ -1,6 +1,6 @@
 package br.com.userauth.application.useCase;
 
-import br.com.userauth.application.ports.UserRepository;
+import br.com.userauth.application.ports.out.UserRepository;
 import br.com.userauth.domain.entities.user.User;
 import br.com.userauth.domain.exception.UserNotExistException;
 import lombok.RequiredArgsConstructor;

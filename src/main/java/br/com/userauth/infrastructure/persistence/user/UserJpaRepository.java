@@ -1,4 +1,4 @@
-package br.com.userauth.infrastructure.persistence;
+package br.com.userauth.infrastructure.persistence.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;

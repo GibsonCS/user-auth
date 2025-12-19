@@ -1,6 +1,6 @@
 package br.com.userauth.infrastructure.security;
 
-import br.com.userauth.infrastructure.persistence.UserJpaRepository;
+import br.com.userauth.infrastructure.persistence.user.UserJpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

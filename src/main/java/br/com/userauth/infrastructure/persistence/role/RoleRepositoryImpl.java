@@ -1,6 +1,6 @@
-package br.com.userauth.infrastructure.persistence;
+package br.com.userauth.infrastructure.persistence.role;
 
-import br.com.userauth.application.ports.RoleRepository;
+import br.com.userauth.application.ports.out.RoleRepository;
 import br.com.userauth.domain.entities.role.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

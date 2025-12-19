@@ -1,4 +1,4 @@
-package br.com.userauth.infrastructure.persistence;
+package br.com.userauth.infrastructure.persistence.role;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

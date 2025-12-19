@@ -1,6 +1,6 @@
-package br.com.userauth.infrastructure;
+package br.com.userauth.infrastructure.security;
 
-import br.com.userauth.application.ports.PasswordEncoder;
+import br.com.userauth.application.ports.out.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 

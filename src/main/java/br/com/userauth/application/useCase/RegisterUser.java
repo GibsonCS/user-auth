@@ -1,8 +1,8 @@
 package br.com.userauth.application.useCase;
 
-import br.com.userauth.application.ports.PasswordEncoder;
-import br.com.userauth.application.ports.RoleRepository;
-import br.com.userauth.application.ports.UserRepository;
+import br.com.userauth.application.ports.out.PasswordEncoder;
+import br.com.userauth.application.ports.out.RoleRepository;
+import br.com.userauth.application.ports.out.UserRepository;
 import br.com.userauth.domain.entities.role.Role;
 import br.com.userauth.domain.entities.user.User;
 import br.com.userauth.domain.exception.UserAlreadyExistException;

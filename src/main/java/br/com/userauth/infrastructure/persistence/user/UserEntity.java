@@ -1,5 +1,6 @@
-package br.com.userauth.infrastructure.persistence;
+package br.com.userauth.infrastructure.persistence.user;
 
+import br.com.userauth.infrastructure.persistence.role.RoleEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 

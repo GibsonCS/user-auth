@@ -1,7 +1,9 @@
-package br.com.userauth.infrastructure.persistence;
+package br.com.userauth.infrastructure.persistence.user;
 
 import br.com.userauth.domain.entities.role.Role;
 import br.com.userauth.domain.entities.user.User;
+import br.com.userauth.infrastructure.persistence.role.RoleEntity;
+import br.com.userauth.infrastructure.persistence.role.RoleMapper;
 
 import java.util.Set;
 import java.util.stream.Collectors;
