@@ -8,4 +8,6 @@ public interface RoleRepository {
     public void save(Role role);
 
     public Role findByName(String name);
+
+    public Role findById(Integer roleId);
 }
