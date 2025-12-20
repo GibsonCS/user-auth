@@ -4,21 +4,25 @@ import br.com.userauth.domain.entities.role.Role;
 import br.com.userauth.domain.exception.InvalidEmailException;
 import br.com.userauth.domain.exception.InvalidLoginException;
 import br.com.userauth.domain.exception.InvalidPasswordException;
+import br.com.userauth.domain.exception.RoleAlreadyExistsException;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
+@EqualsAndHashCode
 public class User {
 
     private final String id;
     private final String login;
     private final String email;
     private final String password;
-    private final Set<Role> roles;
     private final Boolean active;
+    private Set<Role> roles = new HashSet<>();
 
-    public User(String id, String login, String email, String password, Boolean active, Set<Role> roles) {
+    public User(String id, String login, String email, String password, Boolean active) {
         if (login == null || login.length() <= 3) {
             throw new InvalidLoginException("insert a valid login");
         }
@@ -33,7 +37,14 @@ public class User {
         this.login = login;
         this.email = email;
         this.password = password;
-        this.roles = Set.copyOf(roles);
         this.active = active;
+    }
+
+    public void addRole(Role role) {
+        if (this.roles.stream().anyMatch(r -> r.getId().equals(role.getId()))) {
+            throw new RoleAlreadyExistsException("Role already exists!");
+        }
+
+        this.roles.add(role);
     }
 }

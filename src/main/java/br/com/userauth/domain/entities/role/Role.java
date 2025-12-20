@@ -5,10 +5,10 @@ import lombok.Getter;
 @Getter
 public class Role {
 
-    private final String id;
+    private final Integer id;
     private final String roleName;
 
-    public Role(String id, String roleName) {
+    public Role(Integer id, String roleName) {
         this.id = id;
         this.roleName = roleName;
     }
