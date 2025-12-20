@@ -2,20 +2,18 @@ package br.com.userauth.infrastructure.persistence.user;
 
 import br.com.userauth.application.ports.out.UserRepository;
 import br.com.userauth.domain.entities.user.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
+@RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
     private final UserJpaRepository userJpaRepository;
-
-    public UserRepositoryImpl(UserJpaRepository userJpaRepository) {
-        this.userJpaRepository = userJpaRepository;
-    }
-
+    
     @Override
     public void save(User user) {
         UserEntity userEntity = UserMapper.toEntity(user);

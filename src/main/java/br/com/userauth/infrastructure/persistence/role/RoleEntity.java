@@ -12,7 +12,7 @@ import lombok.Data;
 public class RoleEntity {
 
     @Id
-    private String id;
+    private Integer id;
     @Column(name = "role_name")
     private String roleName;
 }

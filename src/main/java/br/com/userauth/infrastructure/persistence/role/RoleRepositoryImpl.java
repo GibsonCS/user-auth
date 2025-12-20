@@ -5,6 +5,8 @@ import br.com.userauth.domain.entities.role.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class RoleRepositoryImpl implements RoleRepository {
@@ -25,5 +27,12 @@ public class RoleRepositoryImpl implements RoleRepository {
         RoleEntity entity = jpa.findByRoleName(name);
 
         return RoleMapper.toDomain(entity);
+    }
+
+    @Override
+    public Role findById(Integer roleId) {
+        Optional<RoleEntity> entity = jpa.findById(roleId);
+
+        return entity.map(RoleMapper::toDomain).orElse(null);
     }
 }

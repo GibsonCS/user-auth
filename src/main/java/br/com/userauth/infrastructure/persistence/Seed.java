@@ -6,8 +6,6 @@ import br.com.userauth.domain.entities.role.RoleEnum;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Component
 public class Seed implements CommandLineRunner {
 
@@ -20,8 +18,13 @@ public class Seed implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Role role = new Role(UUID.randomUUID().toString(), RoleEnum.USER.toString());
+        Role role = new Role(1, RoleEnum.ADMIN.toString());
+        this.roleRepository.save(role);
 
+        role = new Role(2, RoleEnum.USER.toString());
+        this.roleRepository.save(role);
+
+        role = new Role(3, RoleEnum.STUDENT.toString());
         this.roleRepository.save(role);
     }
 }

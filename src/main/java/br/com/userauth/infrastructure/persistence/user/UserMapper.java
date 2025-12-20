@@ -34,13 +34,16 @@ public class UserMapper {
                 .map(RoleMapper::toDomain)
                 .collect(Collectors.toSet());
 
-        return new User(
+        User user = new User(
                 userEntity.getId(),
                 userEntity.getLogin(),
                 userEntity.getEmail(),
                 userEntity.getPassword(),
-                userEntity.getActive(),
-                roles
+                userEntity.getActive()
         );
+
+        roles.forEach(user::addRole);
+
+        return user;
     }
 }
